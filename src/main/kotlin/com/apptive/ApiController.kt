@@ -1,15 +1,28 @@
 package com.apptive
 
+import com.apptive.Model.Generation
+import com.apptive.gameservice.GameService
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 
+
+
 @RestController
-@Service
-open class GomController {
+open class GomController @Autowired constructor(val gameService: GameService) {
+
+
     @RequestMapping(value = "/", method = arrayOf(RequestMethod.GET))
     fun index(): String {
         return "apa"
     }
+
+
+    @RequestMapping(value = "/generation/next", method = arrayOf(RequestMethod.POST))
+    fun getNextGeneration(generation: Generation): Generation {
+        return gameService.getNextGeneration(generation)
+    }
+
 }
