@@ -1,4 +1,4 @@
-package com.apptive.Model
+package com.apptive.model
 
 
 import java.awt.*

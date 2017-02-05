@@ -10,15 +10,9 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.config.annotation.EnableWebMvc
 
 @SpringBootApplication
-
 open class GomApplication
 
 fun main(args: Array<String>) {
-    SpringApplication.run(GomApplication::class.java, *args)
-    val context = AnnotationConfigApplicationContext()
-    context.register(SpringConfiguration::class.java)
-    context.register(GameService::class.java)
-    context.refresh()
-    context.close()
-
+    val ctx = SpringApplication.run(GomApplication::class.java, *args)
+    //ctx.add
 }
