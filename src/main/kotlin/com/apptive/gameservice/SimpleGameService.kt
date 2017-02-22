@@ -40,8 +40,8 @@ class SimpleGameService : GameService {
             firstGenerations[x][y] = 'x'
         }
         for (i in deadCells.indices) {
-            val x = babies[i].x
-            val y = babies[i].y
+            val x = deadCells[i].x
+            val y = deadCells[i].y
             firstGenerations[x][y] = ' '
         }
 
