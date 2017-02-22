@@ -11,12 +11,6 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 open class GomController @Autowired constructor(val gameService: GameService) {
-    @RequestMapping(value = "/", method = arrayOf(RequestMethod.GET))
-    fun index(): String {
-        return "apa"
-    }
-
-
     @RequestMapping(value = "/generation/next", method = arrayOf(RequestMethod.POST))
     fun getNextGeneration(@RequestBody generation: Generation): Generation {
         return gameService.getNextGeneration(generation)
